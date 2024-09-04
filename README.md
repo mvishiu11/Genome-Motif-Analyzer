@@ -128,6 +128,10 @@ Generates a plot of motif positions and saves the visualization to `visualizatio
 
 The project also includes a **modern Streamlit web app** for more interactive and visual exploration of genome motifs.
 
+The UI is as below:
+
+![Streamlit app](images/gma.png)
+
 To launch the app:
 1. Run the Streamlit server:
    ```bash
