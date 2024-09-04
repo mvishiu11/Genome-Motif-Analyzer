@@ -1,184 +1,211 @@
-# **Genome Motif Analyzer (GMA)**
+# **🌿 Genome Motif Analyzer (GMA)**
+
+A simple, yet elegant tool for identifying, analyzing, and visualizing DNA motifs in genome sequences.
+
+![Python](https://img.shields.io/badge/python-3.12.3%2B-blue)
+![Biopython](https://img.shields.io/badge/Biopython-1.84-brightgreen)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+---
 
 ## **Table of Contents**
 
-1. [Project Overview](#project-overview)
-2. [Theoretical Background](#theoretical-background)
-3. [Features](#features)
-4. [Installation](#installation)
-5. [Usage](#usage)
+1. [✨ Project Overview](#project-overview)
+2. [🧬 Theoretical Background](#theoretical-background)
+3. [💡 Features](#features)
+4. [⚙️ Installation](#installation)
+5. [🚀 Usage](#usage)
    - [Command-Line Interface (CLI)](#command-line-interface-cli)
    - [Streamlit Web Application](#streamlit-web-application)
-6. [Visualization Examples](#visualization-examples)
-7. [Project Structure](#project-structure)
-8. [Future Enhancements](#future-enhancements)
-9. [Contributing](#contributing)
-10. [License](#license)
+6. [📊 Visualization Examples](#visualization-examples)
+7. [🛠️ Project Structure](#project-structure)
+8. [🔮 Future Enhancements](#future-enhancements)
+9. [🤝 Contributing](#contributing)
+10. [📜 License](#license)
 
 ---
 
-## **Project Overview**
+## ✨ **Project Overview**
 
-**Genome Motif Analyzer (GMA)** is a Python-based bioinformatics tool designed to help scientists and researchers analyze DNA sequences for specific motifs. By leveraging the Biopython library, GMA allows users to:
-- **Parse genome sequences** from FASTA files.
-- **Search for DNA motifs**, including exact matches and approximate matches (with allowed mismatches).
-- **Visualize motif positions** along the genome, helping researchers better understand sequence patterns and potential regulatory elements.
-- Provide **an interactive and user-friendly interface** via a command-line tool and a web-based application.
+**Genome Motif Analyzer (GMA)** is a Python-based bioinformatics tool designed to assist scientists and researchers in identifying specific DNA motifs within genome sequences. Leveraging the powerful **Biopython** library, GMA provides an easy-to-use interface for:
 
-This tool is designed for ease of use, efficiency, and scalability, making it ideal for bioinformatics analyses involving genome sequence patterns.
+- **Parsing genome sequences** from FASTA files.
+- **Searching for DNA motifs**, including exact and approximate matches with customizable mismatch thresholds.
+- **Visualizing motif positions** within the genome to help identify regulatory elements, transcription factor binding sites, and other sequence patterns.
+
+The tool is highly customizable, offering a **command-line interface (CLI)** for quick interactions, and a **modern web-based interface (via Streamlit)** for visual analysis and reporting.
 
 ---
 
-## **Theoretical Background**
+## 🧬 **Theoretical Background**
 
 ### **What is a DNA Motif?**
-In genomics, a **DNA motif** refers to a recurring sequence pattern within DNA that holds biological significance. Motifs can be small sequences of nucleotides that function as transcription factor binding sites, regulatory elements, or even signals for protein-DNA interactions.
+A **DNA motif** is a short recurring sequence within a genome that holds biological significance. These motifs can act as:
 
-Motifs can be exact (e.g., `ATGCG`) or approximate (where slight variations are allowed), and they play a crucial role in understanding genetic regulation, disease mutations, and evolutionary patterns.
+- **Transcription factor binding sites**, guiding the machinery that turns genes on and off.
+- **Regulatory elements** that influence gene expression and cellular behavior.
+- **Repetitive elements** that may be linked to genetic disorders, mutations, or evolutionary patterns.
 
-For example:
-- **Promoter motifs** often indicate regions upstream of genes where transcription begins.
-- **Repetitive elements** like microsatellites or tandem repeats can be linked to genetic disorders or evolutionary events.
+Motifs can be **exact sequences** or **approximate sequences** with slight variations (mismatches). Detecting these motifs is vital for understanding gene regulation, evolutionary conservation, and disease mechanisms.
 
-### **Why Search for Motifs?**
-Identifying motifs within genomes can:
-- Highlight regions with potential regulatory roles.
-- Provide insights into gene function and expression control.
-- Reveal evolutionary conservation and divergence between species.
-
-By searching for motifs in genomic data, scientists can unlock hidden biological meaning behind sequence patterns and predict their impact on cellular functions.
+### **Why Analyze Motifs?**
+By identifying motifs within genomic data, researchers can:
+- Pinpoint potential **functional regulatory elements**.
+- Study the **conservation of motifs** across species.
+- Investigate the role of motifs in **genetic diseases**, such as those related to repetitive elements like trinucleotide repeats.
 
 ---
 
-## **Features**
+## 💡 **Features**
 
-- **Motif Search**: Search for exact or approximate motifs (with a user-defined number of allowed mismatches).
-- **Command-Line Interface**: Quickly analyze genomes directly from your terminal using a variety of command-line options.
-- **Streamlit Web App**: A user-friendly web interface for visualizing motifs and interacting with the genome sequences.
-- **Visualization**: Generate and save high-quality plots of motif positions along the genome sequence.
-- **Multiple Input Methods**: Accepts genome sequences via file uploads (FASTA format) or directly as strings.
+- 🔍 **Motif Search**: Find exact or approximate motifs within the genome sequence, with customizable mismatch thresholds.
+- 🖥️ **Command-Line Interface (CLI)**: Analyze genome sequences with easy-to-use terminal commands.
+- 🌐 **Streamlit Web App**: Explore genome motifs with an intuitive, interactive web interface.
+- 📊 **Visualize Motif Positions**: Generate high-quality plots showing motif locations within the genome sequence.
+- 📁 **Flexible Input**: Supports genome sequence input via FASTA files or raw sequence strings.
 
 ---
 
-## **Installation**
+## ⚙️ **Installation**
 
 ### **Requirements**
-- Python 3.10+
-- Required libraries: `Biopython`, `Matplotlib`, `Streamlit`
+- **Python** 3.10+
+- Libraries: `Biopython`, `Matplotlib`, `Streamlit`
 
 ### **Step-by-Step Installation**
 
-1. Clone this repository to your local machine:
+1. **Clone this repository**:
    ```bash
    git clone https://github.com/your-username/genome-motif-analyzer.git
    cd genome-motif-analyzer
    ```
 
-2. Set up a virtual environment:
+2. **Set up a virtual environment**:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # For Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install the required dependencies:
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. (Optional) Install the package locally:
+4. **(Optional) Install the package locally**:
    ```bash
    pip install -e .
    ```
 
 ---
 
-## **Usage**
+## 🚀 **Usage**
 
 ### **Command-Line Interface (CLI)**
 
-The GMA provides a command-line interface (CLI) for quick genome analysis. Here are the basic commands:
+You can use the CLI for quick motif analysis directly from your terminal.
 
-#### **Search for a Motif**:
-
+#### **Example 1: Search for a motif**
 ```bash
 python gma-cli.py genomes/test.fasta --motif ATGCG
 ```
-
 This command will search for the motif `ATGCG` in the provided FASTA file.
 
-#### **Allowing Mismatches**:
-
+#### **Example 2: Search with mismatches**
 ```bash
 python gma-cli.py genomes/test.fasta --motif ATGCG --mismatches 2
 ```
+Searches for the motif `ATGCG` with up to 2 allowed mismatches.
 
-This searches for the motif `ATGCG` with up to 2 allowed mismatches.
-
-#### **Visualize and Save the Motif Plot**:
-
+#### **Example 3: Visualize and save motif plot**
 ```bash
 python gma-cli.py genomes/test.fasta --motif ATGCG --visualize --output visualization.png
 ```
+Generates a plot of motif positions and saves the visualization to `visualization.png`. If no output path is provided, it saves the plot in the `visualizations/` directory by default.
 
-This command will generate a plot of the motif positions and save the visualization to `visualization.png`. If `output` is not provided, it will be saved in the `visualizations` directory.
+---
 
 ### **Streamlit Web Application**
 
-The project also includes a modern web-based interface using Streamlit. This app provides basic interface as can be seen below:
+The project also includes a **modern Streamlit web app** for more interactive and visual exploration of genome motifs.
 
-![Streamlit App](images/gma.png)
-
-To run the Streamlit app:
-
-1. Start the Streamlit server:
+To launch the app:
+1. Run the Streamlit server:
    ```bash
    streamlit run app.py
    ```
 
-2. Navigate to `http://localhost:8501` in your browser.
+2. Open your browser and navigate to:
+   ```url
+   http://localhost:8501
+   ```
 
-#### **Features of the Web App**:
-- **Upload Genome Files**: Upload a FASTA file for analysis.
-- **Motif Search**: Input a motif and specify allowed mismatches.
-- **Visualization**: Display a real-time plot of the motif positions along the genome.
-
----
-
-## **Visualization Examples**
-
-- **Motif `TCG` found in the Sars-CoV-2 genome:**
-
-![Motif Visualization 1](visualizations/sars-cov-2_TCG_plot.png)
-
-- **Motif `TCGATAT` found in the Sars-CoV-2 genome:**
-
-![Motif Visualization 2](visualizations/sars-cov-2_TCGATAT_plot.png)
+#### **Streamlit App Features**:
+- **Upload Genome Files**: Upload a FASTA file and analyze it in real-time.
+- **Motif Search**: Input a DNA motif and specify the number of allowed mismatches.
+- **Visualization**: View a dynamic plot showing the positions of the motif within the genome.
 
 ---
 
-## **Future Enhancements**
+## 📊 **Visualization Examples**
 
-We have plans to expand GMA's functionality with the following features:
+Below are some examples of motif visualizations generated using **GMA**:
 
-1. **Support for RNA/Protein Motifs**: Extend the tool to handle RNA sequences and protein motifs.
-2. **Multiple Motif Search**: Simultaneously search for multiple motifs and visualize their overlap.
-3. **Motif Clustering**: Identify clusters of motifs that may indicate functional regulatory elements.
-4. **Integration with Public Databases**: Automatically pull sequences from NCBI or Ensembl directly within the app.
+- **Motif `TCG` found in the SARS-CoV-2 genome**:
 
----
+  ![Motif Visualization 1](visualizations/sars-cov-2_TCG_plot.png)
 
-## **Contributing**
+- **Motif `TCGATAT` found in the SARS-CoV-2 genome**:
 
-We welcome contributions to the Genome Motif Analyzer project! To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Submit a pull request, and make sure to include tests for your changes.
-
-For significant changes, please open an issue first to discuss what you'd like to change.
+  ![Motif Visualization 2](visualizations/sars-cov-2_TCGATAT_plot.png)
 
 ---
 
-## **License**
+## 🛠️ **Project Structure**
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+```bash
+bioseq_analyzer/
+├── bioseq_analyzer/
+│   ├── __init__.py           # Module initializer
+│   ├── genome.py             # Core genome analysis functionality
+│   └── utils.py              # Utility functions (if needed)
+├── tests/
+│   └── test_genome.py        # Unit tests for genome analysis
+├── CLI.py                    # Command-line interface for motif analysis
+├── app.py                    # Streamlit web application
+├── setup.py                  # Setup script for package distribution
+├── requirements.txt          # Required libraries
+└── README.md                 # Documentation
+```
+
+---
+
+## 🔮 **Future Enhancements**
+
+We plan to enhance **Genome Motif Analyzer (GMA)** with the following features:
+
+1. **RNA/Protein Motif Support**: Extend the tool to handle RNA sequences and protein motifs.
+2. **Multiple Motif Search**: Enable searching for multiple motifs simultaneously and visualize their overlaps.
+3. **Motif Clustering**: Identify clusters of motifs that might indicate functional regulatory elements.
+4. **Public Database Integration**: Allow users to automatically fetch sequences from NCBI, Ensembl, and other public databases.
+
+---
+
+## 🤝 **Contributing**
+
+Contributions are highly welcome! To contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch** for your feature or bugfix.
+3. **Submit a pull request** with details of your changes.
+
+Please ensure that all new features are accompanied by relevant tests.
+
+---
+
+## 📜 **License**
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Feel free to reach out with questions or suggestions for improvements!
